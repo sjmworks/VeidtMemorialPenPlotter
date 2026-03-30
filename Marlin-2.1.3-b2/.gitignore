@@ -172,3 +172,8 @@ tags
 .aider*
 !.aiderignore
 .env
+
+
+.pio/
+.pioenvs/
+.piolibdeps/
