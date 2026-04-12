@@ -1,0 +1,111 @@
+; Demo GCode for a 2-syringe multimaterial print.
+
+; Clear Nozzle Extrusion Coefficient = 2
+G90 ; Absolute mode
+G21 ; Set units to mm
+
+
+; Manually position all axes to desired starting position. Bring nozzles so that they just barely make contact with the stage
+
+
+G1 X0 Y0 Z2 A2 F300 ; Move nozzles up so they don't crash into the print
+G1 Z0.05 F200 ; Move Z nozzle up a defined height for extrusion. ADJUST IF NECESSARY
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G91; Relative mode
+G1 B0.1 F200 ; WRITE IN the initial distance to pressurize the syringe
+G92 B0; Set extruder position to 0 after initial pressurization
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+G90 ; absolute mode
+
+
+G1 X5.3 Y0.0 B0.025 F300.0
+G1 X5.3 Y0.5 B0.027 F300.0
+G1 X0.0 Y0.5 B0.052 F300.0
+G1 X0.0 Y1.0 B0.055 F300.0
+G1 X5.3 Y1.0 B0.08 F300.0
+G1 X5.3 Y1.5 B0.082 F300.0
+G1 X0.0 Y1.5 B0.107 F300.0
+G1 X0.0 Y2.0 B0.11 F300.0
+G1 X5.3 Y2.0 B0.135 F300.0
+G1 X5.3 Y2.5 B0.137 F300.0
+G1 X0.0 Y2.5 B0.162 F300.0
+G1 X0.0 Y3.0 B0.164 F300.0
+G1 X5.3 Y3.0 B0.19 F300.0
+G1 X5.3 Y3.5 B0.192 F300.0
+G1 X0.0 Y3.5 B0.217 F300.0
+G1 X0.0 Y4.0 B0.219 F300.0
+G1 X5.3 Y4.0 B0.244 F300.0
+G1 X5.3 Y4.5 B0.247 F300.0
+G1 X0.0 Y4.5 B0.272 F300.0
+G1 X0.0 Y5.0 B0.274 F300.0
+G1 X5.3 Y5.0 B0.299 F300.0
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G91
+G1 B-0.1 F200; WRITE in the distance to depressurize the syringe
+G92 B0 ; Reset Extruder to 0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+G90
+G1 Z1.0 F300.0; Raise Z to get out of the way of the print.
+
+
+;;;;;;;;;;;;;;;Adjust for X/Y Offset between plungers;;;;;;;;;;;;;;
+G91
+G1 X32.67 Y0.55 F300.0
+G92 X0 Y0
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+G90
+G1 X0 Y0 A0.05 F300; Bring A axis down
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G91
+G1 C0.1 F200 ; WRITE IN the distance to pressurize the syringe 
+G92 C0 ; DEFINE EXTRUDER POSITION TO MATCH THE BEGINNING OF THE EXTRUSION VALUES BELOW
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+G90
+
+
+G1 X0.0 Y-5.1 C0.024 F300.0
+G1 X-0.5 Y-5.1 C0.026 F300.0
+G1 X-0.5 Y0.0 C0.051 F300.0
+G1 X-1.0 Y0.0 C0.053 F300.0
+G1 X-1.0 Y-5.1 C0.077 F300.0
+G1 X-1.5 Y-5.1 C0.079 F300.0
+G1 X-1.5 Y0.0 C0.103 F300.0
+G1 X-2.0 Y0.0 C0.106 F300.0
+G1 X-2.0 Y-5.1 C0.13 F300.0
+G1 X-2.5 Y-5.1 C0.132 F300.0
+G1 X-2.5 Y0.0 C0.156 F300.0
+G1 X-3.0 Y0.0 C0.159 F300.0
+G1 X-3.0 Y-5.1 C0.183 F300.0
+G1 X-3.5 Y-5.1 C0.185 F300.0
+G1 X-3.5 Y0.0 C0.209 F300.0
+G1 X-4.0 Y0.0 C0.212 F300.0
+G1 X-4.0 Y-5.1 C0.236 F300.0
+G1 X-4.5 Y-5.1 C0.238 F300.0
+G1 X-4.5 Y0.0 C0.262 F300.0
+G1 X-5.0 Y0.0 C0.265 F300.0
+G1 X-5.0 Y-5.1 C0.289 F300.0
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+G91
+G1 C-0.1 F200; WRITE IN the distance to depressurize the syringe
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+G90
+G1 X-40 Y-5.1 Z10 A10 F300
+G92 X0 Y0 Z10 A10 ;Reset coordinates ready for next print to the side

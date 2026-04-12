@@ -1,0 +1,13 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"50-01092017-116891";"";
+"REFERENCE";"AM23HS0420-01";"";
+"TraceParts.PartTitle";"NEMA23 (56mm) Two-phase DC Stepper Motor 1.8 Degree - 23HS Series";"";
+"TraceParts.InstanceId";"50-01092017-1168916JYAGR2FW74POQWEZSVPM263V";"";
+"DESIGN";"NEMA23 (56mm) Two-phase DC Stepper Motor 1.8 Degree - 23HS Series AM23HS0420-01";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartStatusId";"";"";
+"SUPPLIER";"MOONS'";"";
+"TraceParts.PartVersion";"1.0.5";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartLanguage";"en";"";
+"TraceParts.ClassPath";"MOONS:50-01092017-116891";"";
